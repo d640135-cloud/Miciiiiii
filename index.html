@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10090c">
+<title>For Miciii — One Honest Thing</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+:root{--bg:#10090c;--panel:#1a0d12;--red:#ed294e;--pink:#ff9bab;--cream:#f8e9e7;--muted:#b99da4;--line:#48202b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.15;background-image:linear-gradient(90deg,transparent 49.8%,#743044 50%,transparent 50.2%),linear-gradient(transparent 49.8%,#743044 50%,transparent 50.2%);background-size:80px 80px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+.noise{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}
+.shell{width:min(1120px,calc(100% - 42px));margin:auto;position:relative;z-index:1}
+nav{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff17}
+.brand{font:500 11px 'DM Mono',monospace;letter-spacing:.22em;color:#f5b4c0}.brand b{color:var(--red);font-size:16px;margin-right:8px}
+.navright{font:10px 'DM Mono',monospace;letter-spacing:.14em;color:#9c7e87}
+.hero{min-height:620px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:45px;padding:70px 0 76px;position:relative}
+.kicker{font:11px 'DM Mono',monospace;letter-spacing:.22em;color:var(--pink);display:flex;align-items:center;gap:12px}
+.kicker:before{content:"";width:34px;height:1px;background:var(--red)}
+h1{font:700 clamp(58px,9vw,112px)/.91 'Playfair Display',serif;letter-spacing:-.055em;margin:28px 0 25px;max-width:680px}
+h1 em{color:var(--red);font-weight:600}
+.intro{font-size:15px;line-height:1.8;color:#c5aeb4;max-width:440px}
+.hero-actions{display:flex;align-items:center;gap:20px;margin-top:34px}
+.open-btn{border:0;background:var(--red);color:#fff;padding:16px 22px;font:700 12px 'DM Sans';letter-spacing:.05em;cursor:pointer;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%);transition:.25s}
+.open-btn:hover{background:#ff4568;transform:translateY(-3px)}
+.hint{font:10px 'DM Mono',monospace;color:#9d7c85;letter-spacing:.1em}
+.visual{height:420px;position:relative;display:flex;align-items:center;justify-content:center}
+.orbit{position:absolute;width:350px;height:350px;border:1px solid #8d203b66;border-radius:50%;animation:spin 28s linear infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #8d203b55;border-radius:50%;inset:28px}
+.orbit:after{inset:62px;border-color:#ed294e44}
+@keyframes spin{to{transform:rotate(360deg)}}
+.heart-core{width:210px;height:210px;background:radial-gradient(circle at 35% 25%,#ff7890,#c4143b 52%,#5b0c22 100%);transform:rotate(-45deg);box-shadow:0 0 75px #ed294e55, inset -12px -15px 25px #3b061b66;position:relative;animation:pulse 3s ease-in-out infinite}
+.heart-core:before,.heart-core:after{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:inherit}
+.heart-core:before{top:-105px}.heart-core:after{left:105px}
+@keyframes pulse{50%{transform:rotate(-45deg) scale(1.06);filter:brightness(1.12)}}
+.visual-label{position:absolute;bottom:10px;right:5px;font:10px 'DM Mono';letter-spacing:.2em;color:#a77d88}
+.stamp{position:absolute;top:45px;right:12px;width:88px;height:88px;border:1px solid #f15a77;border-radius:50%;display:grid;place-items:center;text-align:center;color:#ff9bab;font:9px/1.5 'DM Mono';letter-spacing:.12em;transform:rotate(12deg)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,#6b293b,transparent)}
+.letter-section{padding:86px 0 92px;display:grid;grid-template-columns:.65fr 1.35fr;gap:70px;align-items:start}
+.side-index{position:sticky;top:30px}
+.number{font:11px 'DM Mono';color:var(--red);letter-spacing:.2em}
+.side-index h2{font:600 39px/1.05 'Playfair Display';margin:20px 0 14px}
+.side-index p{font-size:12px;line-height:1.8;color:#a98b94;max-width:220px}
+.letter{background:linear-gradient(145deg,#211017,#170b10);border:1px solid #582537;padding:clamp(25px,5vw,58px);position:relative;box-shadow:0 30px 90px #0008}
+.letter:before{content:"";position:absolute;left:0;top:0;width:3px;height:100%;background:linear-gradient(var(--red),transparent 70%)}
+.letter-top{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #ffffff1c;padding-bottom:20px;margin-bottom:27px;font:10px 'DM Mono';letter-spacing:.15em;color:#d58b9a}
+.letter p{font-size:14px;line-height:2.05;color:#ddcbd0;margin:0 0 19px}
+.letter p:last-of-type{margin-bottom:0}
+.sign{font:italic 28px 'Playfair Display';color:var(--pink);margin-top:32px}
+.reply{padding:78px 0 100px;text-align:center;position:relative}
+.reply .kicker{justify-content:center}
+.reply h2{font:600 clamp(44px,7vw,76px)/1 'Playfair Display';margin:23px auto 16px;max-width:700px}
+.reply h2 em{color:var(--red)}
+.reply p{color:#b99da4;font-size:14px;line-height:1.8;max-width:480px;margin:0 auto 30px}
+.discord{display:inline-flex;align-items:center;gap:12px;padding:18px 28px;background:#ed294e;color:white;text-decoration:none;font-size:12px;font-weight:800;letter-spacing:.08em;box-shadow:0 12px 40px #ed294e35;transition:.25s}
+.discord:hover{transform:translateY(-4px);box-shadow:0 18px 50px #ed294e55;background:#ff4568}
+.copy{display:block;margin:17px auto 0;background:none;border:0;color:#a77d88;text-decoration:underline;text-underline-offset:4px;font:11px 'DM Mono';cursor:pointer}
+footer{border-top:1px solid #ffffff17;padding:24px 0 30px;display:flex;justify-content:space-between;color:#80636d;font:9px 'DM Mono';letter-spacing:.14em}
+#toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);opacity:0;background:#f8e9e7;color:#39101d;padding:12px 18px;font-size:12px;z-index:10;transition:.3s;pointer-events:none}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:760px){.shell{width:min(100% - 32px,560px)}nav{height:66px}.navright{font-size:8px}.hero{grid-template-columns:1fr;gap:5px;padding:66px 0 45px;min-height:unset}.hero h1{font-size:clamp(62px,16vw,90px)}.visual{height:300px;grid-row:1}.orbit{width:250px;height:250px}.heart-core,.heart-core:before,.heart-core:after{width:145px;height:145px}.heart-core:before{top:-72px}.heart-core:after{left:72px}.stamp{right:8%;top:5px;width:72px;height:72px;font-size:8px}.visual-label{bottom:0;right:4%}.hero-copy{grid-row:2}.hero-actions{flex-wrap:wrap}.letter-section{grid-template-columns:1fr;gap:26px;padding:62px 0}.side-index{position:static}.side-index h2{font-size:34px}.side-index p{max-width:100%}.letter{padding:27px 23px}.letter p{font-size:13px}.reply{padding:65px 0 76px}footer{gap:12px;flex-wrap:wrap;font-size:8px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="shell">
+<nav><div class="brand"><b>✦</b> PRIVATE LETTER / 001</div><div class="navright">A LITTLE BRAVERY · FOR MICIII</div></nav>
+<section class="hero" id="top">
+ <div class="hero-copy">
+  <div class="kicker">NOT JUST ANOTHER MESSAGE</div>
+  <h1>One thing<br>I've been<br><em>meaning</em> to say.</h1>
+  <p class="intro">Ada sesuatu yang udah lama pengen aku sampein. Kali ini aku mau beraniin diri buat jujur, khusus buat kamu.</p>
+  <div class="hero-actions"><button class="open-btn" onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">READ MY LETTER <span>↘</span></button><span class="hint">TAKE YOUR TIME. NO PRESSURE.</span></div>
+ </div>
+ <div class="visual"><div class="orbit"></div><div class="heart-core"></div><div class="stamp">SEALED<br>WITH<br>FEELING ♡</div><div class="visual-label">A HEART, WITHOUT A FILTER — 2026</div></div>
+</section>
+<div class="divider"></div>
+<section class="letter-section" id="letter">
+ <aside class="side-index"><div class="number">01 — THE CONFESSION</div><h2>Dear<br><em>Miciiiiii,</em></h2><p>Some feelings are easier to write than to say out loud. So here's mine.</p></aside>
+ <article class="letter">
+  <div class="letter-top"><span>PERSONAL / UNFILTERED</span><span>♡ 01 OF 01</span></div>
+  <p>Hiiii miciiiii, aku mau ngomong sesuatuu nihhh. Sebenernya aku agak bingung mau mulai dari mana, tapi aku pengen jujur sama apa yang aku rasain sekaranggg.</p>
+  <p>Aku tuh nyaman banget ngobrol sama kamuuu, kamu juga lucuuuu bangettt. Gatau kenapa setiap kali ngobrol sama kamu rasanya selalu ada aja yang bikin aku senenggg.</p>
+  <p>Aku tau kita emang ga terlalu sering ngobrol di OOC, tapi sekalinya kita ngobrol, aku ngerasa bener-bener nyaman sama kamuuu. Mungkin menurut kamu ini agak aneh atau bahkan terlalu cepet, tapi ya emang itu yang aku rasain sekaranggg. Aku juga ga mau terus-terusan buang waktu cuma buat nebak-nebak perasaan sendiri.</p>
+  <p>Aku sadar kita juga belum terlalu kenal satu sama lain, masih banyak hal yang belum kita tau tentang masing-masing. Tapi justru aku pengen kita bisa saling kenal lebih jauh, pelan-pelan sambil jalanin semuanya bareng-barenggg.</p>
+  <p>Jujur aku pengen punya hubungan yang lebih sama kamuuu, bukan cuma sekadar ngobrol atau jadi temen biasa. Aku pengen ada sesuatu yang bisa kita jalanin berdua, saling cerita, saling nemenin, dan saling ada satu sama lain.</p>
+  <p>Mungkin kedengerannya egois, tapi aku ga mau cuma diem dan akhirnya keduluan sama orang lain yang mungkin juga punya perasaan yang sama ke kamu. Makanya aku milih buat ngomong sekarang daripada nantinya cuma bisa nyesel karena ga pernah nyoba.</p>
+  <p>Jadiii, gimana kalau kita coba jalanin sesuatu yang lebih dari sekaranggg? Kita kenalan lebih jauh, saling memahami, dan lihat sejauh mana kita bisa berjalan bareng. Aku harap kamu ga ngerasa terbebani sama apa yang aku omongin ini yaaa. Aku cuma pengen kamu tau kalau ada seseorang di sini yang beneran pengen kenal kamu lebih jauh, dan orang itu adalah akuuu. 🤍</p>
+  <div class="sign">with a little courage, ♡</div>
+ </article>
+</section>
+<div class="divider"></div>
+<section class="reply">
+ <div class="kicker">THE NEXT MOVE IS YOURS</div>
+ <h2>So, what does<br><em>your heart say?</em></h2>
+ <p>Apapun jawaban kamu, aku pengen denger langsung dari kamuuu. Kalau udah siap, kita ngobrol di Discord yaa. ❤️</p>
+ <a class="discord" href="https://discord.gg/vGxCuBg2N" target="_blank" rel="noopener noreferrer"><span>◉</span> REPLY ON DISCORD <span>↗</span></a>
+ <button class="copy" id="copy">or copy the invite link ♡</button>
+</section>
+<footer><span>MADE WITH HONEST FEELINGS</span><span>NO EXPECTATIONS. JUST HONESTY. ♥</span></footer>
+</div>
+<div id="toast">Discord invite copied ♡</div>
+<script>
+const invite='https://discord.gg/vGxCuBg2N';
+document.getElementById('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(invite);showToast('Discord invite copied ♡')}catch(e){showToast(invite)}});
+function showToast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2300)}
+</script>
+</body>
+</html>
